@@ -1,0 +1,15 @@
+server:
+  port: ${PORT_MS}
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://${HOST}:${PORT}/${DATABASE}
+    username: ${USERNAME}
+    password: ${PASSWORD}
+    pool:
+      enabled: ${POOL}
+
+security:
+  oauth2:
+    resourceserver:
+      jwt:
+        jwk-set-uri: ${URL_SERVER_OAUTH2}/oauth2/jwks
